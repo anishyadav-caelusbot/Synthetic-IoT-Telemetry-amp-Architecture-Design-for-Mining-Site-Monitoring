@@ -1,0 +1,1 @@
+# Synthetic-IoT-Telemetry-amp-Architecture-Design-for-Mining-Site-Monitoring
