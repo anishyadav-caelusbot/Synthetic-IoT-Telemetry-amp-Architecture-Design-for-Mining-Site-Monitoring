@@ -1,0 +1,426 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" version="28.1.1">
+  <diagram id="high_level_arch" name="Architecture">
+    <mxGraphModel dx="10707" dy="6553" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="&lt;b&gt;Child Nodes: Sensors&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="-130" y="570" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Vehicles (LoRa, WiFi, BLE)" style="text;html=1;fontSize=12;align=center;" parent="2" vertex="1">
+          <mxGeometry x="11" y="10" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Fixed Assets (Modbus/RS485, Zigbee)" style="text;html=1;fontSize=12;align=center;" parent="2" vertex="1">
+          <mxGeometry x="11" y="30" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Env Sensors (LoRa, RF433)" style="text;html=1;fontSize=12;align=center;" parent="2" vertex="1">
+          <mxGeometry x="11" y="90" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Personnel (BLE, Zigbee)" style="text;html=1;fontSize=12;align=center;" parent="2" vertex="1">
+          <mxGeometry x="11" y="120" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="&lt;b&gt;Parent Nodes:&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;Data Acquisition Devices&lt;br&gt;Site 2&lt;/b&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="280" y="570" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Wireless (LoRa, WiFi, BLE, Zigbee)" style="text;html=1;fontSize=12;" parent="7" vertex="1">
+          <mxGeometry x="10" y="10" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Wired (Modbus/RS485)" style="text;html=1;fontSize=12;" parent="7" vertex="1">
+          <mxGeometry x="30" y="100" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="LoRa, WiFi, RF433,&lt;br&gt;Modbus/RS485, BLE, Zigbee" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" parent="1" source="2" target="7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;Gateways 2&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="640" y="570" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="LoRaWAN Gateways" style="text;html=1;fontSize=12;align=center;" parent="11" vertex="1">
+          <mxGeometry x="10" y="20" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="WiFi/Ethernet Routers" style="text;html=1;fontSize=12;align=center;" parent="11" vertex="1">
+          <mxGeometry x="10" y="90" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="Cellular (4G/5G)" style="text;html=1;fontSize=12;align=center;" parent="11" vertex="1">
+          <mxGeometry x="10" y="110" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="Ethernet, WiFi, Cellular" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" parent="1" source="7" target="11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Edge Compute&amp;nbsp;&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;font size=&quot;3&quot;&gt;(Raspberry Pi/ Jetson + AWS IoT Greengrass)&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="920" width="300" height="245" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="Local MQTT Broker &amp;amp; Queue" style="text;html=1;fontSize=12;align=center;" parent="16" vertex="1">
+          <mxGeometry x="15" y="10.84" width="269.99999999999994" height="49" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="Dead-Letter Queue (DLQ)" style="text;html=1;fontSize=12;align=center;" parent="16" vertex="1">
+          <mxGeometry x="15" y="40.004999999999995" width="270" height="19.83625" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Local Processing with&amp;nbsp;&lt;br&gt;local Lambda functions and ML models&lt;br&gt;&lt;br&gt;&lt;div&gt;Local IoT Rules,&amp;nbsp; Local&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Alerts and Alarms&lt;/span&gt;&lt;/div&gt;" style="text;html=1;fontSize=12;align=center;" parent="16" vertex="1">
+          <mxGeometry x="-22.5" y="170.62791666666664" width="345" height="49" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-116" value="Offline Buffering" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="16">
+          <mxGeometry x="15" y="67.5" width="270" height="19.83625" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="TLS-encrypted MQTT QOS 1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" parent="1" source="-Jfy3wjIp_0O3yjBF87Z-40" target="16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="&lt;b&gt;AWS IoT Core&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="1520" y="47.5" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="Device Management" style="text;html=1;fontSize=12;align=center;" parent="21" vertex="1">
+          <mxGeometry x="10" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="MQTT Broker (mining/#)" style="text;html=1;fontSize=12;align=center;" parent="21" vertex="1">
+          <mxGeometry x="10" y="90" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="Rules Engine" style="text;html=1;fontSize=12;align=center;" parent="21" vertex="1">
+          <mxGeometry x="10" y="110" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-89" value="Device Defender" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="21">
+          <mxGeometry x="10" y="20" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-91" value="Identity and Acces Management" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="21">
+          <mxGeometry x="10" y="40" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="TLS-encrypted MQTT QOS 1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" parent="1" source="-Jfy3wjIp_0O3yjBF87Z-83" target="21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="&lt;b&gt;Processing &amp;amp; Storage&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="2180" y="30" width="310" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="AWS IoT Analytics" style="text;html=1;fontSize=12;align=center;" parent="26" vertex="1">
+          <mxGeometry x="15.499999999999998" y="12.666666666666666" width="278.99999999999994" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="Amazon Timestream" style="text;html=1;fontSize=12;align=center;" parent="26" vertex="1">
+          <mxGeometry x="15.499999999999998" y="38" width="278.99999999999994" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="Amazon S3" style="text;html=1;fontSize=12;align=center;" parent="26" vertex="1">
+          <mxGeometry x="15.499999999999998" y="113.99666666666667" width="278.99999999999994" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="Aws Lambda for stream processing" style="text;html=1;fontSize=12;align=center;" parent="26" vertex="1">
+          <mxGeometry x="15.499999999999998" y="152" width="278.99999999999994" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-105" value="Amazon Athena" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="26">
+          <mxGeometry x="15.499999999999998" y="130" width="278.99999999999994" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="Rules Engine Routing" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="21" target="-Jfy3wjIp_0O3yjBF87Z-100" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1850" y="125" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="32" value="&lt;b&gt;Monitoring &amp;amp; Alerting&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="2180" y="330" width="310" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="Amazon CloudWatch (Metrics &amp;amp; Logs)" style="text;html=1;fontSize=12;align=center;" parent="32" vertex="1">
+          <mxGeometry x="15.5" y="8" width="279" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="Amazon SNS ( Email, SMS, Push notifcations)" style="text;html=1;fontSize=12;align=center;" parent="32" vertex="1">
+          <mxGeometry x="15.5" y="79.99999999999999" width="279" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="Grafana Dashboards (Perfromance Monitoring)" style="text;html=1;fontSize=12;align=center;" parent="32" vertex="1">
+          <mxGeometry x="15.5" y="96" width="279" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="Metrics, Logs, Alerts" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" parent="1" source="26" target="32" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="&lt;b&gt;Applications&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="2710" y="35" width="280" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="Custom Web/Mobile Apps" style="text;html=1;fontSize=12;align=center;" parent="37" vertex="1">
+          <mxGeometry x="14" y="8.536585365853659" width="252" height="25.609756097560975" as="geometry" />
+        </mxCell>
+        <mxCell id="39" value="Digital Twin (AWS IoT TwinMaker)" style="text;html=1;fontSize=12;align=center;" parent="37" vertex="1">
+          <mxGeometry x="14" y="122.5" width="251.99999999999997" height="52.49999999999999" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-98" value="AWS QuickSight" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="37">
+          <mxGeometry x="14" y="34.146341463414636" width="252" height="25.609756097560975" as="geometry" />
+        </mxCell>
+        <mxCell id="40" value="Dashboards, Twin Data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="26" target="37" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.545;entryY=1.015;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="c-x6hVElLLpBZixfVEIR-40" target="7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-40" value="&lt;b&gt;Child Nodes: Sensors&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="280" y="910" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-41" value="Vehicles (LoRa, WiFi, BLE)" style="text;html=1;fontSize=12;align=center;" parent="c-x6hVElLLpBZixfVEIR-40" vertex="1">
+          <mxGeometry x="11" y="10" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-42" value="Fixed Assets (Modbus/RS485, Zigbee)" style="text;html=1;fontSize=12;align=center;" parent="c-x6hVElLLpBZixfVEIR-40" vertex="1">
+          <mxGeometry x="11" y="30" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-43" value="Env Sensors (LoRa, RF433)" style="text;html=1;fontSize=12;align=center;" parent="c-x6hVElLLpBZixfVEIR-40" vertex="1">
+          <mxGeometry x="11" y="90" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-44" value="Personnel (BLE, Zigbee)" style="text;html=1;fontSize=12;align=center;" parent="c-x6hVElLLpBZixfVEIR-40" vertex="1">
+          <mxGeometry x="11" y="120" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-46" value="&lt;b&gt;Child Nodes: Sensors&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry y="350" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-47" value="Vehicles (LoRa, WiFi, BLE)" style="text;html=1;fontSize=12;align=center;" parent="c-x6hVElLLpBZixfVEIR-46" vertex="1">
+          <mxGeometry x="11" y="10" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-48" value="Fixed Assets (Modbus/RS485, Zigbee)" style="text;html=1;fontSize=12;align=center;" parent="c-x6hVElLLpBZixfVEIR-46" vertex="1">
+          <mxGeometry x="11" y="30" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-49" value="Env Sensors (LoRa, RF433)" style="text;html=1;fontSize=12;align=center;" parent="c-x6hVElLLpBZixfVEIR-46" vertex="1">
+          <mxGeometry x="11" y="90" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-50" value="Personnel (BLE, Zigbee)" style="text;html=1;fontSize=12;align=center;" parent="c-x6hVElLLpBZixfVEIR-46" vertex="1">
+          <mxGeometry x="11" y="120" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-56" value="&lt;b&gt;Child Nodes: Sensors&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="260" y="230" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-57" value="Vehicles (LoRa, WiFi, BLE)" style="text;html=1;fontSize=12;align=center;" parent="c-x6hVElLLpBZixfVEIR-56" vertex="1">
+          <mxGeometry x="11" y="10" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-58" value="Fixed Assets (Modbus/RS485, Zigbee)" style="text;html=1;fontSize=12;align=center;" parent="c-x6hVElLLpBZixfVEIR-56" vertex="1">
+          <mxGeometry x="11" y="30" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-59" value="Env Sensors (LoRa, RF433)" style="text;html=1;fontSize=12;align=center;" parent="c-x6hVElLLpBZixfVEIR-56" vertex="1">
+          <mxGeometry x="11" y="90" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-60" value="Personnel (BLE, Zigbee)" style="text;html=1;fontSize=12;align=center;" parent="c-x6hVElLLpBZixfVEIR-56" vertex="1">
+          <mxGeometry x="11" y="120" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-62" value="&lt;b&gt;Child Nodes: Sensors&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry y="790" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-63" value="Vehicles (LoRa, WiFi, BLE)" style="text;html=1;fontSize=12;align=center;" parent="c-x6hVElLLpBZixfVEIR-62" vertex="1">
+          <mxGeometry x="11" y="10" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-64" value="Fixed Assets (Modbus/RS485, Zigbee)" style="text;html=1;fontSize=12;align=center;" parent="c-x6hVElLLpBZixfVEIR-62" vertex="1">
+          <mxGeometry x="11" y="30" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-65" value="Env Sensors (LoRa, RF433)" style="text;html=1;fontSize=12;align=center;" parent="c-x6hVElLLpBZixfVEIR-62" vertex="1">
+          <mxGeometry x="11" y="90" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-66" value="Personnel (BLE, Zigbee)" style="text;html=1;fontSize=12;align=center;" parent="c-x6hVElLLpBZixfVEIR-62" vertex="1">
+          <mxGeometry x="11" y="120" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.317;entryY=1.008;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="c-x6hVElLLpBZixfVEIR-64" target="7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.987;exitY=0.907;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.317;entryY=-0.014;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="c-x6hVElLLpBZixfVEIR-46" target="7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="485" as="sourcePoint" />
+            <mxPoint x="340" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-79" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.449;entryY=-0.018;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="c-x6hVElLLpBZixfVEIR-60" target="7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="380" as="sourcePoint" />
+            <mxPoint x="389" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c-x6hVElLLpBZixfVEIR-78" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;LoRa, WiFi, RF433,&lt;/span&gt;&lt;br style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Modbus/RS485, BLE, Zigbee&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="280" y="510" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-41" value="&lt;b&gt;Child Nodes: Sensors&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="-160" y="-510" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-42" value="Vehicles (LoRa, WiFi, BLE)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-41">
+          <mxGeometry x="11" y="10" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-43" value="Fixed Assets (Modbus/RS485, Zigbee)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-41">
+          <mxGeometry x="11" y="30" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-44" value="Env Sensors (LoRa, RF433)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-41">
+          <mxGeometry x="11" y="90" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-45" value="Personnel (BLE, Zigbee)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-41">
+          <mxGeometry x="11" y="120" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-46" value="&lt;b&gt;Parent Nodes:&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;Data Acquisition Devices&lt;br&gt;Site 1&lt;/b&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="-510" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-47" value="Wireless (LoRa, WiFi, BLE, Zigbee)" style="text;html=1;fontSize=12;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-46">
+          <mxGeometry x="10" y="10" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-48" value="Wired (Modbus/RS485)" style="text;html=1;fontSize=12;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-46">
+          <mxGeometry x="30" y="100" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-49" value="LoRa, WiFi, RF433,&lt;br&gt;Modbus/RS485, BLE, Zigbee" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="-Jfy3wjIp_0O3yjBF87Z-41" target="-Jfy3wjIp_0O3yjBF87Z-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.545;entryY=1.015;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="-Jfy3wjIp_0O3yjBF87Z-51" target="-Jfy3wjIp_0O3yjBF87Z-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-51" value="&lt;b&gt;Child Nodes: Sensors&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="-170" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-52" value="Vehicles (LoRa, WiFi, BLE)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-51">
+          <mxGeometry x="11" y="10" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-53" value="Fixed Assets (Modbus/RS485, Zigbee)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-51">
+          <mxGeometry x="11" y="30" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-54" value="Env Sensors (LoRa, RF433)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-51">
+          <mxGeometry x="11" y="90" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-55" value="Personnel (BLE, Zigbee)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-51">
+          <mxGeometry x="11" y="120" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-56" value="&lt;b&gt;Child Nodes: Sensors&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="-30" y="-730" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-57" value="Vehicles (LoRa, WiFi, BLE)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-56">
+          <mxGeometry x="11" y="10" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-58" value="Fixed Assets (Modbus/RS485, Zigbee)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-56">
+          <mxGeometry x="11" y="30" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-59" value="Env Sensors (LoRa, RF433)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-56">
+          <mxGeometry x="11" y="90" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-60" value="Personnel (BLE, Zigbee)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-56">
+          <mxGeometry x="11" y="120" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-61" value="&lt;b&gt;Child Nodes: Sensors&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="-850" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-62" value="Vehicles (LoRa, WiFi, BLE)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-61">
+          <mxGeometry x="11" y="10" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-63" value="Fixed Assets (Modbus/RS485, Zigbee)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-61">
+          <mxGeometry x="11" y="30" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-64" value="Env Sensors (LoRa, RF433)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-61">
+          <mxGeometry x="11" y="90" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-65" value="Personnel (BLE, Zigbee)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-61">
+          <mxGeometry x="11" y="120" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-66" value="&lt;b&gt;Child Nodes: Sensors&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="-30" y="-290" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-67" value="Vehicles (LoRa, WiFi, BLE)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-66">
+          <mxGeometry x="11" y="10" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-68" value="Fixed Assets (Modbus/RS485, Zigbee)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-66">
+          <mxGeometry x="11" y="30" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-69" value="Env Sensors (LoRa, RF433)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-66">
+          <mxGeometry x="11" y="90" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-70" value="Personnel (BLE, Zigbee)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-66">
+          <mxGeometry x="11" y="120" width="198.00000000000003" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.317;entryY=1.008;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="-Jfy3wjIp_0O3yjBF87Z-68" target="-Jfy3wjIp_0O3yjBF87Z-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.987;exitY=0.907;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.317;entryY=-0.014;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="-Jfy3wjIp_0O3yjBF87Z-56" target="-Jfy3wjIp_0O3yjBF87Z-46">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="-595" as="sourcePoint" />
+            <mxPoint x="310" y="-520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-74" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.55;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="-Jfy3wjIp_0O3yjBF87Z-65" target="-Jfy3wjIp_0O3yjBF87Z-46">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="-700" as="sourcePoint" />
+            <mxPoint x="359" y="-510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-75" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;LoRa, WiFi, RF433,&lt;/span&gt;&lt;br style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Modbus/RS485, BLE, Zigbee&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="250" y="-570" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-77" value="&lt;b&gt;Gateways 1&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="610" y="-510" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-78" value="LoRaWAN Gateways" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-77">
+          <mxGeometry x="10" y="20" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-79" value="WiFi/Ethernet Routers" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-77">
+          <mxGeometry x="10" y="90" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-80" value="Cellular (4G/5G)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-77">
+          <mxGeometry x="10" y="110" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-81" value="Ethernet, WiFi, Cellular" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" target="-Jfy3wjIp_0O3yjBF87Z-77">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="-435" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-82" value="TLS-encrypted MQTT QoS1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="-Jfy3wjIp_0O3yjBF87Z-84" target="16">
+          <mxGeometry x="0.362" relative="1" as="geometry">
+            <mxPoint x="1070" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-87" value="Base 64, JSON" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="550" y="600" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-88" value="Base 64, JSON" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="510" y="-480" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-104" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="-Jfy3wjIp_0O3yjBF87Z-92" target="26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-92" value="&lt;b&gt;AI ML Implmentation&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="2170" y="-200" width="330" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-94" value="AWS Sagemaker (anomoly detetction)" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-92">
+          <mxGeometry x="16.5" y="20" width="297" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-96" value="AWS Lambda" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-92">
+          <mxGeometry x="16.5" y="100" width="297" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-103" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="-Jfy3wjIp_0O3yjBF87Z-100" target="26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-100" value="&lt;div style=&quot;text-align: start;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0); font-size: 14px;&quot; face=&quot;Google Sans, Roboto, Arial, sans-serif&quot;&gt;&lt;b&gt;Amazon Kinesis Data Stream&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1870" y="50" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-101" value="&lt;p style=&quot;white-space: pre-wrap;&quot; dir=&quot;auto&quot;&gt;Kinesis on demand&lt;/p&gt;" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-100">
+          <mxGeometry x="10" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-102" value="AWS Lambda" style="text;html=1;fontSize=12;align=center;" vertex="1" parent="-Jfy3wjIp_0O3yjBF87Z-100">
+          <mxGeometry x="10" y="100" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-109" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.633;entryY=0.993;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.642;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="26" target="-Jfy3wjIp_0O3yjBF87Z-92">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2350" y="-10" as="sourcePoint" />
+            <mxPoint x="2350" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-113" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.002;entryY=0.606;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.006;exitY=0.624;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="37" target="26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-117" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="11" target="-Jfy3wjIp_0O3yjBF87Z-40">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="840" y="645" as="sourcePoint" />
+            <mxPoint x="1070" y="248" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-40" value="JSON" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="490" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-118" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="-Jfy3wjIp_0O3yjBF87Z-77" target="-Jfy3wjIp_0O3yjBF87Z-84">
+          <mxGeometry x="0.362" relative="1" as="geometry">
+            <mxPoint x="1070" y="13" as="targetPoint" />
+            <mxPoint x="810" y="-435" as="sourcePoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-84" value="JSON" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="-350" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-121" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="16" target="-Jfy3wjIp_0O3yjBF87Z-83">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1220" y="123" as="sourcePoint" />
+            <mxPoint x="1520" y="123" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-83" value="JSON" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="107.5" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-Jfy3wjIp_0O3yjBF87Z-125" value="&lt;p dir=&quot;auto&quot; style=&quot;white-space: pre-wrap;&quot;&gt;&lt;font style=&quot;font-size: 36px;&quot;&gt;&lt;b&gt;AWS  Dependent Architecture Design for Mining Site Monitoring&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;" style="text;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="730" y="-830" width="1440" height="210" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

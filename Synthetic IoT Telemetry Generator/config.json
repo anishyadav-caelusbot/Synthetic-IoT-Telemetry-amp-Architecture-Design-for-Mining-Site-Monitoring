@@ -1,0 +1,16 @@
+{
+  "num_vehicles": 5,
+  "num_fixed_assets": 4,
+  "num_env_sensors": 4,
+  "num_personnel": 10,
+  "frequency": 2,
+  "variance": 0.1,
+  "seed": 42,
+  "mode": "fault",
+  "broker": "localhost",
+  "port": 1883,
+  "aws_endpoint": null,
+  "cert": null,
+  "key": null,
+  "ca": null
+}
